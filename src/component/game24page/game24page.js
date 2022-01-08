@@ -3,6 +3,7 @@ import './Game24PageCssStyle/game24page.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Container } from 'react-bootstrap';
 
+import LastPage from '../Lastpage/LastPage';
 import Stopwatch from "./Stopwatch";
 import PageCount from "./PageCount";
 import NumberComponent from "./NumberComponent";
@@ -10,7 +11,7 @@ import OperatorComponent from "./OperatorComponent";
 import AnswerComponent from "./AnswerComponent";
 import './Game24PageCssStyle/NextBtn.css'
 import { GameProblem } from './RandomNumber'
-
+import { Link, Redirect } from "react-router-dom";
 
 function Gamepage(props) {
     const [pageCount, setPageCount] = useState(1)
@@ -22,16 +23,12 @@ function Gamepage(props) {
     const [onNextBtn, setOnNextBtn] = useState("NEXT PROBLEMS")
     //for stopWatch
     const [running, setRunning] = useState(false);
-    //for stop the watch and submit the answer
-
+    const [randomNum, setRandomNum] = useState({})
 
     const [isDisable1, setIsDisable1] = useState(false)
     const [isDisable2, setIsDisable2] = useState(false)
     const [isDisable3, setIsDisable3] = useState(false)
     const [isDisable4, setIsDisable4] = useState(false)
-
-
-    const [randomNum, setRandomNum] = useState({})
 
     //useEffect = when enter this page, start timing automatically
     useEffect(() => {
@@ -51,7 +48,6 @@ function Gamepage(props) {
             if (Number.isInteger(result[currentIndex - 1]) && Number.isInteger(result[currentIndex])) {
                 let tmpResult = result
                 tmpResult.pop()
-
                 setCurrentIndex(currentIndex)
                 setResult(tmpResult)
                 switch (clickedPosition) {
@@ -72,7 +68,7 @@ function Gamepage(props) {
                 }
             }
         }
-    }, [result, clickedPosition, count, currentIndex])
+    }, [result])
 
     const onAnswerClick = (newAnswer, position) => {
         setResult([...result, newAnswer])
@@ -82,7 +78,6 @@ function Gamepage(props) {
     const changeNextToSubmitBtn = () => (
         setOnNextBtn("SUBMIT ANSWER")
     )
-
 
     const onNext = () => {
         try {
@@ -96,8 +91,11 @@ function Gamepage(props) {
             const mock = 24
             if (mock === 24) {
                 if (pageCount === 3) {
-                    setRunning(false)                        // stop timing and save the time duration
-                    //navigate to lastpage
+                    // {<link to={"/ScoreBoard"}>
+
+                    // </link>}
+                    setRunning(false)// stop timing and save the time duration
+                    //Go to last pages
                 }
                 else {
                     let newRandomNumber = GameProblem[Math.floor(Math.random() * GameProblem.length)];
@@ -111,7 +109,6 @@ function Gamepage(props) {
                     }
                 }
                 console.log("--------------------");
-                //ไปหน้าถัดไป
                 clearAnswer()
             }
             else {
@@ -180,14 +177,24 @@ function Gamepage(props) {
                 </button>
 
                 <div className="Box"></div>
+
                 <div>
-                    <button className='NextBtn' onClick={onNext}>
-                        {onNextBtn}
-                    </button>
+                    {
+                        (pageCount === 3) ?
+                            <Link to={"/ScoreBoard"}>
+                                <button className='NextBtn' onClick={onNext}>
+                                    {onNextBtn}
+                                </button>
+                            </Link> 
+                            :
+                            <button className='NextBtn' onClick={onNext}>
+                                {onNextBtn}
+                            </button>
+                    }
+
                 </div>
 
-                <div className="Box"></div>
-
+                
 
                 {
                     !status && alert(changeStatus() + "Your answer is mathematically incorrect.")
