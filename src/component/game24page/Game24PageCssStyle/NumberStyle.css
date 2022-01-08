@@ -1,0 +1,49 @@
+.NumberStyle {
+  width: 270px;
+  height: 150px;
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #29467d;
+  background-color: #fdcf5d;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 10px #eeae0e;
+  cursor: pointer;
+}
+
+.NumberStyle:hover {
+  background-color: #fdcf5d;
+}
+
+.NumberStyle:active {
+  background-color: #fdcf5d;
+  box-shadow: 0 7px #eeae0e;
+  transform: translateY(4px);
+}
+
+.NumberStyleDisable {
+  width: 270px;
+  height: 150px;
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #EEEEEE;
+  background-color: #B7B7B7;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 7px #9C9C9C;
+  cursor: not-allowed;
+}

@@ -1,0 +1,26 @@
+.LastpageBG {
+  background-color: #bec6af;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: calc(10px + 2vmin);
+}
+
+.Box {
+  padding-top: 50px;
+}
+
+.spacing {
+  height: 50px;
+}
+table,
+th,
+td {
+  border: 3px solid black;
+}
+.table {
+  width: 100%;
+}

@@ -1,0 +1,44 @@
+.btn-mode1 {
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fdcf5d;
+  background-color: #29467d;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 9px #122852;
+}
+
+.btn-mode1:hover {
+  background-color: #29467d;
+}
+
+.btn-mode1:active {
+  background-color: #29467d;
+  box-shadow: 0 5px #071f4b;
+  transform: translateY(4px);
+}
+
+.disable{
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #EEEEEE;
+  background-color: #B7B7B7;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 9px #9C9C9C;
+  cursor: not-allowed;
+}

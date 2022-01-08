@@ -1,0 +1,28 @@
+.AnswerStyle {
+  width: 100px;
+  height: 90px;
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #29467d;
+  background-color: #fdcf5d;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 10px #eeae0e;
+}
+
+/* .AnswerStyle:hover {
+  background-color: #fdcf5d;
+}
+
+.AnswerStyle:active {
+  background-color: #fdcf5d;
+  box-shadow: 0 7px #eeae0e;
+  transform: translateY(4px);
+} */

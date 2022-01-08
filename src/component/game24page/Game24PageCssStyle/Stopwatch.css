@@ -1,0 +1,10 @@
+.WatchBody {
+  padding-top: 55px;
+  background-color: #d2cab5;
+}
+
+.WatchStyle {
+  box-sizing: border-box;
+  padding: 5px;
+  background: cadetblue;
+}

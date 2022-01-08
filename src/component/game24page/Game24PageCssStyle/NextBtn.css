@@ -1,0 +1,28 @@
+.NextBtn {
+  width: 500px;
+  height: 100px;
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fdcf5d;
+  background-color: #29467d;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 10px #122852;
+}
+
+.NextBtn:hover {
+  background-color: #29467d;
+}
+
+.NextBtn:hover:active {
+  background-color: #29467d;
+  box-shadow: 0 7px #071f4b;
+  transform: translateY(4px);
+}
