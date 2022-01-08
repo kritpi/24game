@@ -72,7 +72,7 @@ function Gamepage(props) {
                 }
             }
         }
-    }, [result])
+    }, [result, clickedPosition, count, currentIndex])
 
     const onAnswerClick = (newAnswer, position) => {
         setResult([...result, newAnswer])
