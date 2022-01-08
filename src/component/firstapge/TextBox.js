@@ -1,12 +1,5 @@
 import './FirstPageCssStyle/TextBox.css'
-
-// import bootstrap classname fromcontrol
-import { Form, FormControl } from 'react-bootstrap';
 function Textbox(props) {
-    
-    
-    
-    
     return (
 
         <label for="inp" class="inp" >
@@ -15,8 +8,6 @@ function Textbox(props) {
             <span class="label">ENTER YOUR NAME</span>
             <span class="focus-bg"></span>
         </label>
-        
-
     );
 }
 

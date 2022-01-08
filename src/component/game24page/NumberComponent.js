@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
 import './Game24PageCssStyle/NumberStyle.css'
-
-import { GameProblem } from './RandomNumber'
 
 function NumberComponent(props) {
     // const [randomNum, setRandomNum] = useState({})
@@ -27,6 +24,8 @@ function NumberComponent(props) {
                 break
             case "4":
                 props.setIsDisable4(true)
+                break
+            default:
                 break
         }
     }

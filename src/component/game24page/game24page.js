@@ -10,7 +10,7 @@ import OperatorComponent from "./OperatorComponent";
 import AnswerComponent from "./AnswerComponent";
 import './Game24PageCssStyle/NextBtn.css'
 import { GameProblem } from './RandomNumber'
-import Btn5 from "../firstapge/5Btn";
+
 
 function Gamepage(props) {
     const [pageCount, setPageCount] = useState(1)
@@ -23,7 +23,7 @@ function Gamepage(props) {
     //for stopWatch
     const [running, setRunning] = useState(false);
     //for stop the watch and submit the answer
-    const [submitBtnStatus, setSubmitBtnStatus] = useState(true)
+
 
     const [isDisable1, setIsDisable1] = useState(false)
     const [isDisable2, setIsDisable2] = useState(false)
@@ -36,13 +36,10 @@ function Gamepage(props) {
     //useEffect = when enter this page, start timing automatically
     useEffect(() => {
         setRunning(true)
-    }, [])
-
-    useEffect(() => {
         let rendomNumObj = GameProblem[Math.floor(Math.random() * GameProblem.length)];
         setRandomNum(rendomNumObj)
-    }, [])
 
+    }, [])
 
     useEffect(() => {
         // console.log("position", clickedPosition);
@@ -98,7 +95,7 @@ function Gamepage(props) {
             console.log(calculate);
             console.log(typeof calculate);
             const mock = 24
-            if (mock === 24) {
+            if (calculate === 24) {
                 if (pageCount === 3) {
                     setRunning(false)                        // stop timing and save the time duration
                     //navigate to lastpage

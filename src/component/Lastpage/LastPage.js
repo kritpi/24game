@@ -1,12 +1,11 @@
 import './LastPageCssStyle/LastPage.css'
 
-import React, { useState } from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { array } from './test'
 
-function LastPage(props) {
+function LastPage() {
     return (
         <div className='LastpageBG'>
             <Container>

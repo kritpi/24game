@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom'
 import Textbox from "./TextBox.js";
 import './FirstPageCssStyle/3Btn.css'
 
-import Btn5 from "./5Btn.js";
-
 function Firstpage() {
     const [name, setName] = useState("")
     

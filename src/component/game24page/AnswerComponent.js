@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
 import './Game24PageCssStyle/AnswerStyle.css'
