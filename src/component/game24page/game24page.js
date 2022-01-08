@@ -86,7 +86,6 @@ function Gamepage(props) {
 
     const onNext = () => {
         try {
-
             let answerResult = ""
             result.forEach(item => answerResult += item)
             console.log(answerResult);
@@ -95,7 +94,7 @@ function Gamepage(props) {
             console.log(calculate);
             console.log(typeof calculate);
             const mock = 24
-            if (calculate === 24) {
+            if (mock === 24) {
                 if (pageCount === 3) {
                     setRunning(false)                        // stop timing and save the time duration
                     //navigate to lastpage
@@ -114,10 +113,6 @@ function Gamepage(props) {
                 console.log("--------------------");
                 //ไปหน้าถัดไป
                 clearAnswer()
-
-
-
-
             }
             else {
                 console.log("not go to next page");

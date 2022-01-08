@@ -2,11 +2,11 @@ import './FirstPageCssStyle/TextBox.css'
 function Textbox(props) {
     return (
 
-        <label for="inp" class="inp" >
+        <label htmlFor="inp" className="inp" >
             <input type="text" id="inp" placeholder="&nbsp;" value={props.name} onChange={(e)=> props.setName(e.target.value)} />
 
-            <span class="label">ENTER YOUR NAME</span>
-            <span class="focus-bg"></span>
+            <span className="label">ENTER YOUR NAME</span>
+            <span className="focus-bg"></span>
         </label>
     );
 }
