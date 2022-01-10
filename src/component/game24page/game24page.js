@@ -95,7 +95,7 @@ function Gamepage(props) {
             console.log(calculate);
             console.log(typeof calculate);
             const mock = 24
-            if (mock === 24) {
+            if (calculate === 24) {
                 if (pageCount === 3) {
                     setRunning(false)
                     setIsShowScoreBoardBtn(true)
@@ -205,14 +205,13 @@ function Gamepage(props) {
 
                 {
                     isShowScoreBoardBtn &&
-                    
-                        <Link to={"/ScoreBoard"}>
-                            <div className="Box"></div>
-                            <button className='SubmitBtn' onClick={onNext}>
-                                GO TO SCOREBOARD
-                            </button>
-                        </Link>
-
+                        <div className="Box">
+                            <Link to={"/ScoreBoard"}>
+                                <button className='SubmitBtn' onClick={onNext}>
+                                    GO TO SCOREBOARD
+                                </button>
+                            </Link>
+                        </div>
                     
 
                 }

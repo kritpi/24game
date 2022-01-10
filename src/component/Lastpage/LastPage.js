@@ -29,8 +29,7 @@ function LastPage() {
     return (
         <div className='LastpageBG'>
             <Container>
-                < div className='Box'>
-                </div>
+                < div className='Box'></div>
                 <div className='TextHeadingStyle'>SCORE BOARD</div>
                 <div className='Box'></div>
                 <div className='overflowTable'>
@@ -60,7 +59,7 @@ function LastPage() {
 
                 <Link to={"/"}>
                     <button className='backHome'>
-                        BACH TO HOMEPAGE
+                        BACK TO HOMEPAGE
                     </button>
                 </Link>
 
