@@ -15,12 +15,6 @@ function AnswerComponent(props) {
                     </Col>
                 ))
             }
-
-
-           
-
-
-
         </Row>
     );
 }

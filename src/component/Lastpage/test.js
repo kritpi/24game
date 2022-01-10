@@ -1,27 +1,27 @@
 export const array = [
     {
-        name : "amp",
-        score : 5
+        name: "amp",
+        score: 5
     },
     {
-        name : "m",
-        score : 3
+        name: "m",
+        score: 3
     },
     {
-        name : "d",
-        score : 1
+        name: "d",
+        score: 1
     },
     {
-        name : "adf",
-        score : 0
+        name: "adf",
+        score: 0
     },
     {
-        name : "xvb",
-        score : 4
+        name: "xvb",
+        score: 4
     },
     {
-        name : "sfgsf",
-        score : 10
+        name: "sfgsf",
+        score: 10
     }
 
 

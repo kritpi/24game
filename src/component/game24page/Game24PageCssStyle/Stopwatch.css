@@ -8,3 +8,14 @@
   padding: 5px;
   background: cadetblue;
 }
+
+.numbers{
+  font-family: inherit;
+  font-size: 40px;
+  font-weight: bold;
+  
+}
+
+.BoxElement {
+  height: 250px;
+}

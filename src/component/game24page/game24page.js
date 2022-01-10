@@ -3,15 +3,19 @@ import './Game24PageCssStyle/game24page.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Container } from 'react-bootstrap';
 
-import LastPage from '../Lastpage/LastPage';
+import { addData, readData } from "../../dbControler";
+
+
 import Stopwatch from "./Stopwatch";
 import PageCount from "./PageCount";
 import NumberComponent from "./NumberComponent";
 import OperatorComponent from "./OperatorComponent";
 import AnswerComponent from "./AnswerComponent";
 import './Game24PageCssStyle/NextBtn.css'
+import './Game24PageCssStyle/Stopwatch.css'
+import './Game24PageCssStyle/submitBtn.css'
 import { GameProblem } from './RandomNumber'
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Gamepage(props) {
     const [pageCount, setPageCount] = useState(1)
@@ -29,6 +33,8 @@ function Gamepage(props) {
     const [isDisable2, setIsDisable2] = useState(false)
     const [isDisable3, setIsDisable3] = useState(false)
     const [isDisable4, setIsDisable4] = useState(false)
+
+    const [isShowScoreBoardBtn, setIsShowScoreBoardBtn] = useState(false)
 
     //useEffect = when enter this page, start timing automatically
     useEffect(() => {
@@ -91,11 +97,9 @@ function Gamepage(props) {
             const mock = 24
             if (mock === 24) {
                 if (pageCount === 3) {
-                    // {<link to={"/ScoreBoard"}>
+                    setRunning(false)
+                    setIsShowScoreBoardBtn(true)
 
-                    // </link>}
-                    setRunning(false)// stop timing and save the time duration
-                    //Go to last pages
                 }
                 else {
                     let newRandomNumber = GameProblem[Math.floor(Math.random() * GameProblem.length)];
@@ -108,7 +112,6 @@ function Gamepage(props) {
                     else {
                     }
                 }
-                console.log("--------------------");
                 clearAnswer()
             }
             else {
@@ -143,62 +146,85 @@ function Gamepage(props) {
         setStatus(true)
     )
 
+
+    const readDataOnClick = () => {
+        console.log(readData());
+    }
+
     return (
         <div className="BG-color">
             <Container>
+                <div className="gamePageCenter"></div>
                 <Row>
-                    <Col> <Stopwatch running={running} setRunning={setRunning} /> </Col>
-                    <Col> <PageCount pageCount={pageCount} /> </Col>
+                    <Col> <Stopwatch running={running} setRunning={setRunning} isShowScoreBoardBtn={isShowScoreBoardBtn} /> </Col>
+                    {
+                        !isShowScoreBoardBtn && <Col> <PageCount pageCount={pageCount} /> </Col>
+                    }
                 </Row>
 
-                <NumberComponent
-                    onClickNum={onAnswerClick}
-                    setIsDisable1={setIsDisable1}
-                    setIsDisable2={setIsDisable2}
-                    setIsDisable3={setIsDisable3}
-                    setIsDisable4={setIsDisable4}
-                    isDisable1={isDisable1}
-                    isDisable2={isDisable2}
-                    isDisable3={isDisable3}
-                    isDisable4={isDisable4}
-                    randomNum={randomNum}
-                />
+                {
+                    !isShowScoreBoardBtn &&
+                    <div>
+                        <div className="Box"></div>
+                        <NumberComponent
+                            onClickNum={onAnswerClick}
+                            setIsDisable1={setIsDisable1}
+                            setIsDisable2={setIsDisable2}
+                            setIsDisable3={setIsDisable3}
+                            setIsDisable4={setIsDisable4}
+                            isDisable1={isDisable1}
+                            isDisable2={isDisable2}
+                            isDisable3={isDisable3}
+                            isDisable4={isDisable4}
+                            randomNum={randomNum}
+                        />
 
-                <div className="Box"></div>
+                        <div className="Box"></div>
 
-                <OperatorComponent onClickOperator={onAnswerClick} />
-                <div className="Box"></div>
+                        <OperatorComponent onClickOperator={onAnswerClick} />
+                        <div className="Box"></div>
 
-                <AnswerComponent result={result} />
-                <div className="Box"></div>
+                        <AnswerComponent result={result} />
+                        <div className="Box"></div>
+                        <Row>
+                            <Col>
+                                <button onClick={clearAnswer} className="clearAnswer">
+                                    CLEAR ANSWER
+                                </button>
+                            </Col>
 
-                <button onClick={clearAnswer}>
-                    Clear All Answer
-                </button>
-
-                <div className="Box"></div>
-
-                <div>
-                    {
-                        (pageCount === 3) ?
-                            <Link to={"/ScoreBoard"}>
+                            <Col>
                                 <button className='NextBtn' onClick={onNext}>
                                     {onNextBtn}
                                 </button>
-                            </Link> 
-                            :
-                            <button className='NextBtn' onClick={onNext}>
-                                {onNextBtn}
+                            </Col>
+                        </Row>
+                    </div>
+
+                }
+
+                {
+                    isShowScoreBoardBtn &&
+                    
+                        <Link to={"/ScoreBoard"}>
+                            <div className="Box"></div>
+                            <button className='SubmitBtn' onClick={onNext}>
+                                GO TO SCOREBOARD
                             </button>
-                    }
+                        </Link>
 
-                </div>
+                    
 
-                
+                }
 
                 {
                     !status && alert(changeStatus() + "Your answer is mathematically incorrect.")
                 }
+
+
+
+                {/* <button onClick={addDataOnClick}>addData</button>
+                <button onClick={readDataOnClick}>readData</button> */}
 
             </Container>
         </div>

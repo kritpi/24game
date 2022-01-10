@@ -1,11 +1,12 @@
 .AnswerStyle {
-  width: 100px;
-  height: 90px;
+  width: 90px;
+  height: 70px;
   display: inline-block;
-  padding: 10px 14px;
+  /* padding: 10px 14px; */
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 45px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -16,13 +17,3 @@
   border-radius: 2px;
   box-shadow: 0 10px #eeae0e;
 }
-
-/* .AnswerStyle:hover {
-  background-color: #fdcf5d;
-}
-
-.AnswerStyle:active {
-  background-color: #fdcf5d;
-  box-shadow: 0 7px #eeae0e;
-  transform: translateY(4px);
-} */

@@ -1,8 +1,9 @@
 .NumberStyle {
-  width: 270px;
-  height: 150px;
+  width: 250px;
+  height: 130px;
   display: inline-block;
   padding: 10px 14px;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -29,10 +30,11 @@
 }
 
 .NumberStyleDisable {
-  width: 270px;
-  height: 150px;
+  width: 250px;
+  height: 130px;
   display: inline-block;
   padding: 10px 14px;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;

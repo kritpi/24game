@@ -1,0 +1,28 @@
+.SubmitBtn {
+    width: 480px;
+    height: 65px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fdcf5d;
+    background-color: #29467d;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 10px #122852;
+  }
+  
+  .SubmitBtn:hover {
+    background-color: #29467d;
+  }
+  
+  .SubmitBtn:hover:active {
+    background-color: #29467d;
+    box-shadow: 0 7px #071f4b;
+    transform: translateY(4px);
+  }

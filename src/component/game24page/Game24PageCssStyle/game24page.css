@@ -1,15 +1,46 @@
 .BG-color {
-    background-color: #D2CAB5;
-    
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    
-    font-size: calc(10px + 2vmin); 
-    
-  }
+  background-color: #d2cab5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
 
-.Box{
-  height: 50px;
+.gamePageCenter{
+  height: 80px;
+}
+
+.Box {
+  height: 70px;
+}
+
+.clearAnswer {
+  width: 380px;
+  height: 65px;
+  display: inline-block;
+  /* padding: 10px 10px; */
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fdcf5d;
+  background-color: #EC3815;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 10px #C3280A;
+}
+
+.clearAnswer:hover {
+  background-color: #EC3815;
+}
+
+.clearAnswer:hover:active {
+  background-color: #EC3815;
+  box-shadow: 0 7px #a11c01;
+  transform: translateY(4px);
 }

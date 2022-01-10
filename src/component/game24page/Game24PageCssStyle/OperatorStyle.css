@@ -1,11 +1,12 @@
 .OperatorStyle {
   width: 120px;
-  height: 100px;
+  height: 80px;
   display: inline-block;
-  padding: 10px 14px;
+  /* padding: 10px 14px; */
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 45px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

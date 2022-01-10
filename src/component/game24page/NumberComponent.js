@@ -3,12 +3,6 @@ import { Row, Col } from 'react-bootstrap';
 import './Game24PageCssStyle/NumberStyle.css'
 
 function NumberComponent(props) {
-    // const [randomNum, setRandomNum] = useState({})
-
-    // useEffect(() => {
-    //     let rendomNumObj = GameProblem[Math.floor(Math.random() * GameProblem.length)];
-    //     setRandomNum(rendomNumObj)
-    // }, [])
 
     const onNumClick = (num, position) => {
         props.onClickNum(num, position)

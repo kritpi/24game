@@ -1,11 +1,12 @@
 .NextBtn {
-  width: 500px;
-  height: 100px;
+  width: 380px;
+  height: 65px;
   display: inline-block;
-  padding: 10px 14px;
+  /* padding: 10px 10px; */
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 40px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

@@ -1,3 +1,45 @@
+.TextHeadingStyle{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+
+table {
+  text-align: center;
+  position: relative;
+  border-collapse: collapse; 
+  font-family: 'Montserrat', sans-serif;
+  
+}
+td,td {
+  padding: 0.25rem;
+  
+}
+
+tr.blue th {
+  background: #ffd56e;
+  color: #29467D;
+  font-family: 'Montserrat', sans-serif;
+}
+
+th {
+  position: sticky;
+  top: 0;
+}
+
+tr:hover{
+  background-color: #b7b7b7;
+}
+
+.overflowTable{
+  background-color: #dbdbdb;
+  height: 600px;
+  width: 1320px;
+  overflow-y: scroll;
+  border-radius: 8px;
+}
+
 .LastpageBG {
   background-color: #bec6af;
 
@@ -16,11 +58,36 @@
 .spacing {
   height: 50px;
 }
-table,
-th,
-td {
-  border: 3px solid black;
+
+.backHome {
+  width: 400px;
+  height: 75px;
+  display: inline-block;
+  padding: 10px 14px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fdcf5d;
+  background-color: #29467d;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 10px #122852;
 }
-.table {
-  width: 100%;
+
+.backHome:hover {
+  background-color: #29467d;
+}
+
+.backHome:hover:active {
+  background-color: #29467d;
+  box-shadow: 0 7px #071f4b;
+  transform: translateY(4px);
+}
+
+.Box {
+  height: 70px;
 }

@@ -3,7 +3,7 @@ import './Game24PageCssStyle/PageCount.css'
 function PageCount(props) {
     return (
         <div className='CountBody'>
-            <div>Number {props.pageCount} / 3</div>
+            <div className='pg-count'>NUMBER {props.pageCount} / 3</div>
         </div>
     );
 }

@@ -1,4 +1,10 @@
 .CountBody {
   padding-top: 55px;
   background-color: #d2cab5;
+
+}
+.pg-count{
+  font-family: inherit;
+  font-size: 40px;
+  font-weight: bold;
 }
