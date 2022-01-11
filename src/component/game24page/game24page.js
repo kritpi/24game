@@ -36,18 +36,15 @@ function Gamepage(props) {
 
     const [isShowScoreBoardBtn, setIsShowScoreBoardBtn] = useState(false)
 
-    //useEffect = when enter this page, start timing automatically
+    //Random number object when enter the page
     useEffect(() => {
         setRunning(true)
         let rendomNumObj = GameProblem[Math.floor(Math.random() * GameProblem.length)];
         setRandomNum(rendomNumObj)
-
     }, [])
 
+    //Check if user put number next to number?
     useEffect(() => {
-        // console.log("position", clickedPosition);
-        // let a = shell.echo('Sorry, this script requires git')
-        // console.log("a", a)
         setCurrentIndex(currentIndex + 1)
         setCount(count + 1)
         if (count >= 1) {
@@ -76,80 +73,75 @@ function Gamepage(props) {
         }
     }, [result])
 
+    //Add answer into array
     const onAnswerClick = (newAnswer, position) => {
         setResult([...result, newAnswer])
         setClickedPosition(position)
     }
 
+    //Change text on nextBtn when 3/3
     const changeNextToSubmitBtn = () => (
         setOnNextBtn("SUBMIT ANSWER")
     )
 
     const onNext = () => {
         try {
+            // 1.Add answer from array to str
             let answerResult = ""
             result.forEach(item => answerResult += item)
-            console.log(answerResult);
-            console.log(typeof answerResult);
+            
+            //2. calculate
             let calculate = eval(answerResult)
-            console.log(calculate);
-            console.log(typeof calculate);
+
             const mock = 24
+            
             if (calculate === 24) {
+                // submit answer
                 if (pageCount === 3) {
+                    // 1. stop timing
                     setRunning(false)
+                    // 2. show scoreboard btn
                     setIsShowScoreBoardBtn(true)
 
                 }
                 else {
+                    //go to next number
                     let newRandomNumber = GameProblem[Math.floor(Math.random() * GameProblem.length)];
                     setRandomNum(newRandomNumber)
-                    console.log("go to next page");
-                    setPageCount(pageCount + 1) //detect เมื่อ pagecount = 3 
+                    setPageCount(pageCount + 1)
+                    //When entering last number
                     if (pageCount === 2) {
-                        changeNextToSubmitBtn() //change content in NextBtn from "next" to "submit answer"
-                    }
-                    else {
+                        changeNextToSubmitBtn() 
                     }
                 }
                 clearAnswer()
             }
             else {
-                console.log("not go to next page");
-                console.log("Show popup wrong answer or error");
                 clearAnswer()
-                console.log("--------------------");
             }
         }
-        catch (error) {
-            console.log("error");
+        catch (error) {            
             setStatus(false)
             clearAnswer()
-            console.log("Show popup wrong answer or error");
-            console.log("--------------------");
-
         }
     }
 
     //clear reasult
     const clearAnswer = () => {
         setResult([])
-        setCount(-1)
-        setCurrentIndex(-1)
+        
         setIsDisable1(false)
         setIsDisable2(false)
         setIsDisable3(false)
         setIsDisable4(false)
+        
+        setCount(-1)
+        setCurrentIndex(-1)
     }
 
     const changeStatus = () => (
         setStatus(true)
     )
-
-
-    const readDataOnClick = () => {
-        console.log(readData());
-    }
 
     return (
         <div className="BG-color">
@@ -204,6 +196,7 @@ function Gamepage(props) {
                 }
 
                 {
+                    //Show scoreboard btn
                     isShowScoreBoardBtn &&
                         <div className="Box">
                             <Link to={"/ScoreBoard"}>
@@ -211,19 +204,13 @@ function Gamepage(props) {
                                     GO TO SCOREBOARD
                                 </button>
                             </Link>
-                        </div>
-                    
-
+                        </div>             
                 }
 
                 {
+                    // Show alert when the answer is error
                     !status && alert(changeStatus() + "Your answer is mathematically incorrect.")
                 }
-
-
-
-                {/* <button onClick={addDataOnClick}>addData</button>
-                <button onClick={readDataOnClick}>readData</button> */}
 
             </Container>
         </div>
